@@ -1,28 +1,26 @@
 var now = moment();
 var hour = now.hour();
+var hoursList = $("#hoursList").children();
+var date = $("#date");
 
-
-console.log(hour)
-
-$("#date").text(now.format('LL'));
-
-
-$("#test").find('div').find('input').addClass("bg-dark");
-
-
-var test = $("#test").children();
+date.text(moment().format('MMMM Do YYYY'))
 
 
 
-var test2 = document.getElementById('test');
+hoursList.each(function() {
+    if (this.dataset.time == hour) {
+        $(this).find('input').addClass("bg-info");
 
-// for (var i=0; i < test.length; i++) {
-//     $("#test").children('#'+i).addClass("bg-light")
-// }
+    }
 
-for (var i = 0; i < test2.children.length; i++) {
-    
-}
+    if (this.dataset.time < hour) {
+        $(this).find('input').addClass("bg-dark text-light");
+    }
+
+})
+
+
+
 
 
 
