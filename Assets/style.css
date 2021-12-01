@@ -1,0 +1,15 @@
+.save {
+    background-color: #2f53a0;
+}
+
+.pasthour {
+    background-color: #489FB5;
+}
+
+.currenthour {
+    background-color: #16697A;
+}
+
+.futurehour {
+    background-color: #82C0CC;
+}

@@ -9,28 +9,16 @@ date.text(moment().format('MMMM Do YYYY'))
 
 hoursList.each(function() {
     if (this.dataset.time == hour) {
-        $(this).find('input').addClass("bg-info");
+        $(this).find('input').addClass("currenthour text-light");
 
     }
 
     if (this.dataset.time < hour) {
-        $(this).find('input').addClass("bg-dark text-light");
+        $(this).find('input').addClass("pasthour text-light");
+    }
+
+    if (this.dataset.time > hour) {
+        $(this).find('input').addClass("futurehour text-light");
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
