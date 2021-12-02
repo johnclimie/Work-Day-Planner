@@ -1,12 +1,14 @@
+//Declare Variables
 var now = moment();
 var hour = now.hour();
 var hoursList = $("#hoursList").children();
 var date = $("#date");
 var clear = $("#clear");
 
+//Set Date on Page to Current Date
 date.text(moment().format('MMMM Do YYYY'))
 
-
+//Function for Color Change in Relation of Time Through Schedule
 hoursList.each(function() {
     if (this.dataset.time == hour) {
         $(this).find('input').addClass("currenthour text-light");
@@ -21,6 +23,7 @@ hoursList.each(function() {
     }
 })
 
+//Sets the Input Box to the Local Storage that it Corresponds With
 $("#input1").val(localStorage.getItem("in1"));
 $("#input2").val(localStorage.getItem("in2"));
 $("#input3").val(localStorage.getItem("in3"));
@@ -31,7 +34,7 @@ $("#input7").val(localStorage.getItem("in7"));
 $("#input8").val(localStorage.getItem("in8"));
 $("#input9").val(localStorage.getItem("in9"));
 
-
+//Sets the Text Input to Local Storage
 $(document).ready(function () {
     $('#button1').click(function() {
         localStorage.setItem("in1", $("#input1").val());
@@ -62,7 +65,7 @@ $(document).ready(function () {
     })
 })
 
-
+//Button that Clears Local Storage and Refreshes Page
 clear.click(function() {
     localStorage.clear();
     location.reload();
