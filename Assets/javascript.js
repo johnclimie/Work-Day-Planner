@@ -2,9 +2,9 @@ var now = moment();
 var hour = now.hour();
 var hoursList = $("#hoursList").children();
 var date = $("#date");
+var clear = $("#clear");
 
 date.text(moment().format('MMMM Do YYYY'))
-
 
 
 hoursList.each(function() {
@@ -21,33 +21,49 @@ hoursList.each(function() {
     }
 })
 
+$("#input1").val(localStorage.getItem("in1"));
+$("#input2").val(localStorage.getItem("in2"));
+$("#input3").val(localStorage.getItem("in3"));
+$("#input4").val(localStorage.getItem("in4"));
+$("#input5").val(localStorage.getItem("in5"));
+$("#input6").val(localStorage.getItem("in6"));
+$("#input7").val(localStorage.getItem("in7"));
+$("#input8").val(localStorage.getItem("in8"));
+$("#input9").val(localStorage.getItem("in9"));
+
 
 $(document).ready(function () {
     $('#button1').click(function() {
-        console.log($('#input1').val());
+        localStorage.setItem("in1", $("#input1").val());
     })
     $('#button2').click(function() {
-        console.log("test2");
+        localStorage.setItem("in2", $("#input2").val());
     })
     $('#button3').click(function() {
-        console.log("test3");
+        localStorage.setItem("in3", $("#input3").val());
     })
     $('#button4').click(function() {
-        console.log("test4");
+        localStorage.setItem("in4", $("#input4").val());
     })
     $('#button5').click(function() {
-        console.log("test5");
+        localStorage.setItem("in5", $("#input5").val());
     })
     $('#button6').click(function() {
-        console.log("test6");
+        localStorage.setItem("in6", $("#input6").val());
     })
     $('#button7').click(function() {
-        console.log("test7");
+        localStorage.setItem("in7", $("#input7").val());
     })
     $('#button8').click(function() {
-        console.log("test8");
+        localStorage.setItem("in8", $("#input8").val());
     })
     $('#button9').click(function() {
-        console.log("test9");
+        localStorage.setItem("in9", $("#input9").val());
     })
+})
+
+
+clear.click(function() {
+    localStorage.clear();
+    location.reload();
 })
